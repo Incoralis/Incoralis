@@ -7,72 +7,532 @@
   <link rel="icon" type="image/png" href="favicon.png">
 
   <style>
-    html,
-    body {
-      margin: 0;
-      min-height: 100vh;
-      overflow-x: hidden;
-      font-family: Arial, sans-serif;
-      color: white;
-      background-image: url("background.png");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-color: #000;
+    :root {
+      --blue: #00ebff;
+      --purple: #9b5cff;
+      --orange: #ff9b32;
+      --red: #ff4f6d;
+      --green: #8cff6a;
+      --dark: #05070d;
+      --panel: rgba(4, 8, 18, 0.86);
+      --text-soft: rgba(255, 255, 255, 0.78);
     }
 
-    .logo-top-right {
-      position: absolute;
-      top: 50px;
-      right: 60px;
-      width: clamp(180px, 40vw, 850px);
-      height: auto;
-      z-index: 10;
-    }
-
-    main {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 40px;
+    * {
       box-sizing: border-box;
     }
 
-    p {
-      margin: 8px 0;
-      font-size: clamp(18px, 2vw, 28px);
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #ffffff;
+      background: #000;
+      overflow-x: hidden;
+    }
+
+    body {
+      min-height: 100vh;
+      background-image:
+        linear-gradient(120deg, rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.9)),
+        url("background.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 18% 18%, rgba(0, 235, 255, 0.16), transparent 28%),
+        radial-gradient(circle at 78% 34%, rgba(155, 92, 255, 0.14), transparent 30%),
+        radial-gradient(circle at 42% 78%, rgba(255, 155, 50, 0.1), transparent 28%);
+      z-index: 0;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      padding: 28px clamp(18px, 4vw, 58px);
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .top-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      max-width: 620px;
+    }
+
+    .nav-tab {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 40px;
+      padding: 10px 15px;
+      border-radius: 999px;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: clamp(12px, 1.1vw, 14px);
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.03)),
+        rgba(2, 5, 12, 0.86);
+      border: 1px solid var(--accent);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.16),
+        0 0 14px color-mix(in srgb, var(--accent) 35%, transparent);
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    }
+
+    .nav-tab:hover,
+    .nav-tab:focus-visible {
+      transform: translateY(-2px);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.2),
+        0 0 26px color-mix(in srgb, var(--accent) 62%, transparent);
+      outline: none;
+    }
+
+    .nav-tab .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 14px var(--accent);
+    }
+
+    .logo {
+      width: clamp(150px, 24vw, 520px);
+      max-height: 180px;
+      object-fit: contain;
+      object-position: top right;
+      filter: drop-shadow(0 0 22px rgba(0, 235, 255, 0.18));
+    }
+
+    main {
+      flex: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      align-content: center;
+      gap: clamp(22px, 4vh, 40px);
+      padding: clamp(28px, 7vh, 78px) 0 30px;
+    }
+
+    .hero {
+      width: min(860px, 100%);
+      margin: 0 auto;
+      text-align: center;
+      padding: clamp(22px, 4vw, 42px);
+      border-radius: 32px;
+      background:
+        linear-gradient(150deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.025)),
+        linear-gradient(90deg, rgba(0, 235, 255, 0.12), rgba(155, 92, 255, 0.08), rgba(255, 155, 50, 0.1)),
+        var(--panel);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow:
+        0 24px 80px rgba(0, 0, 0, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.16),
+        0 0 34px rgba(0, 235, 255, 0.12);
+    }
+
+    .kicker {
+      margin: 0 0 10px;
+      color: var(--blue);
+      font-size: clamp(12px, 1.8vw, 16px);
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-shadow: 0 0 18px rgba(0, 235, 255, 0.55);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(32px, 6vw, 76px);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, var(--blue), #ffffff, var(--purple), var(--orange));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 0 18px rgba(0, 235, 255, 0.18));
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 18px auto 0;
+      color: var(--text-soft);
+      font-size: clamp(15px, 2vw, 20px);
+      line-height: 1.55;
+    }
+
+    .feature-row {
+      width: min(980px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(240px, 430px) minmax(0, 1fr);
+      gap: clamp(18px, 3vw, 28px);
+      align-items: stretch;
+    }
+
+    .incoralis-card,
+    .note-card {
+      border-radius: 30px;
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.025)),
+        rgba(3, 7, 16, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.17);
+      box-shadow:
+        0 18px 54px rgba(0, 0, 0, 0.48),
+        inset 0 1px 0 rgba(255, 255, 255, 0.16);
+    }
+
+    .incoralis-card {
+      display: block;
+      padding: clamp(22px, 3vw, 32px);
+      text-decoration: none;
+      color: #ffffff;
+      border-color: rgba(0, 235, 255, 0.55);
+      box-shadow:
+        0 18px 54px rgba(0, 0, 0, 0.52),
+        0 0 28px rgba(0, 235, 255, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.16);
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .incoralis-card:hover,
+    .incoralis-card:focus-visible {
+      transform: translateY(-4px);
+      box-shadow:
+        0 24px 70px rgba(0, 0, 0, 0.62),
+        0 0 42px rgba(0, 235, 255, 0.35),
+        0 0 32px rgba(155, 92, 255, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.18);
+      outline: none;
+    }
+
+    .incoralis-card h2 {
+      margin: 0;
+      font-size: clamp(26px, 4vw, 48px);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      background: linear-gradient(90deg, var(--blue), var(--purple), var(--orange));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .incoralis-card p,
+    .note-card p {
+      margin: 14px 0 0;
+      color: var(--text-soft);
+      font-size: clamp(14px, 1.8vw, 17px);
+      line-height: 1.55;
+    }
+
+    .enter {
+      display: inline-flex;
+      margin-top: 20px;
+      color: var(--green);
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 13px;
+      text-shadow: 0 0 15px rgba(140, 255, 106, 0.45);
+    }
+
+    .note-card {
+      padding: clamp(20px, 3vw, 30px);
+      align-content: center;
+    }
+
+    .note-card strong {
       color: #ffffff;
     }
 
-    @media (max-width: 768px) {
-      .logo-top-right {
-        top: 24px;
-        right: 20px;
-        width: clamp(150px, 48vw, 240px);
+    section {
+      scroll-margin-top: 24px;
+    }
+
+    .section-panel {
+      width: min(980px, 100%);
+      margin: 28px auto 0;
+      padding: clamp(22px, 4vw, 38px);
+      border-radius: 30px;
+      background: rgba(3, 7, 16, 0.92);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow: 0 22px 70px rgba(0, 0, 0, 0.55);
+    }
+
+    .section-panel h2 {
+      margin: 0 0 14px;
+      font-size: clamp(24px, 4vw, 42px);
+      color: var(--blue);
+    }
+
+    .section-panel p {
+      color: var(--text-soft);
+      line-height: 1.65;
+      font-size: clamp(14px, 1.7vw, 17px);
+    }
+
+    .legal-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .legal-card {
+      min-height: 90px;
+      padding: 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      color: #ffffff;
+      background:
+        linear-gradient(150deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.025)),
+        rgba(0, 0, 0, 0.42);
+      border: 1px solid var(--accent);
+      box-shadow: 0 0 18px color-mix(in srgb, var(--accent) 30%, transparent);
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .legal-card:hover,
+    .legal-card:focus-visible {
+      transform: translateY(-3px);
+      box-shadow: 0 0 30px color-mix(in srgb, var(--accent) 55%, transparent);
+      outline: none;
+    }
+
+    .legal-card span {
+      display: block;
+      font-size: 12px;
+      color: var(--text-soft);
+      margin-top: 6px;
+    }
+
+    footer {
+      padding: 24px 0 8px;
+      color: rgba(255, 255, 255, 0.58);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      header {
+        gap: 18px;
+      }
+
+      .logo {
+        width: clamp(140px, 30vw, 300px);
+      }
+
+      .feature-row {
+        grid-template-columns: 1fr;
+      }
+
+      .legal-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 620px) {
+      body {
+        background-position: center top;
+      }
+
+      .page {
+        padding: 18px 14px;
+      }
+
+      header {
+        align-items: flex-start;
+      }
+
+      .top-nav {
+        gap: 7px;
+        max-width: 58%;
+      }
+
+      .nav-tab {
+        padding: 8px 10px;
+        min-height: 34px;
+        font-size: 11px;
+      }
+
+      .nav-tab .dot {
+        width: 7px;
+        height: 7px;
+      }
+
+      .logo {
+        width: clamp(112px, 34vw, 170px);
       }
 
       main {
-        padding: 24px;
-        justify-content: flex-end;
-        padding-bottom: 72px;
+        justify-content: center;
+        padding-top: 38px;
       }
 
-      p {
-        font-size: clamp(16px, 4.5vw, 18px);
+      .hero {
+        border-radius: 24px;
+      }
+
+      .feature-row {
+        gap: 16px;
+      }
+
+      .incoralis-card,
+      .note-card,
+      .section-panel {
+        border-radius: 24px;
+      }
+
+      .legal-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 390px) {
+      header {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+      }
+
+      .top-nav {
+        max-width: 100%;
+      }
+
+      .logo {
+        align-self: flex-end;
       }
     }
   </style>
 </head>
 
 <body>
+  <div class="page">
+    <header>
+      <nav class="top-nav" aria-label="Incoralis Group navigation">
+        <a class="nav-tab" href="#disclaimer" style="--accent: var(--orange);">
+          <span class="dot"></span>
+          Disclaimer
+        </a>
+        <a class="nav-tab" href="#privacy" style="--accent: var(--blue);">
+          <span class="dot"></span>
+          Privacy
+        </a>
+        <a class="nav-tab" href="#terms" style="--accent: var(--purple);">
+          <span class="dot"></span>
+          T&amp;C
+        </a>
+        <a class="nav-tab" href="#contact" style="--accent: var(--green);">
+          <span class="dot"></span>
+          Contact
+        </a>
+      </nav>
 
-  <img src="Logo2.png" alt="Incoralis Logo" class="logo-top-right">
+      <img src="Logo2.png" alt="Incoralis Group Limited" class="logo">
+    </header>
 
-  <main>
-    <p>Website coming soon.</p>
-    <p>Contact: admin@incoralis.co.uk</p>
-  </main>
+    <main>
+      <section class="hero" id="home">
+        <p class="kicker">Incoralis Group Limited</p>
+        <h1>New app coming soon</h1>
+        <p>
+          Building polished digital tools with clarity, organisation and everyday usefulness in mind.
+        </p>
+      </section>
 
+      <section class="feature-row" aria-label="Incoralis feature area">
+        <a class="incoralis-card" href="#incoralis">
+          <h2>Incoralis Ltd</h2>
+          <p>
+            Product details, support information and app-specific legal links will be added here as releases go live.
+          </p>
+          <span class="enter">Enter section →</span>
+        </a>
+
+        <div class="note-card">
+          <p>
+            <strong>Coming soon:</strong> a new digital product from Incoralis, designed to help make everyday planning clearer and easier.
+          </p>
+        </div>
+      </section>
+
+      <section class="section-panel" id="incoralis">
+        <h2>Incoralis Ltd</h2>
+        <p>
+          This section is being prepared for product information, app support, screenshots, store links and app-specific legal pages.
+        </p>
+
+        <div class="legal-grid">
+          <a class="legal-card" href="#privacy" style="--accent: var(--blue);">
+            Privacy Policy
+            <span>Website and app privacy information</span>
+          </a>
+          <a class="legal-card" href="#terms" style="--accent: var(--purple);">
+            Terms &amp; Conditions
+            <span>Terms for using Incoralis services</span>
+          </a>
+          <a class="legal-card" href="#disclaimer" style="--accent: var(--orange);">
+            Disclaimer
+            <span>Important limitations and notices</span>
+          </a>
+          <a class="legal-card" href="#contact" style="--accent: var(--green);">
+            Contact
+            <span>Company and support details</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="section-panel" id="privacy">
+        <h2>Privacy Policy</h2>
+        <p>
+          Privacy information will be added here. App-specific privacy details can also be linked from the Incoralis Ltd section when products go live.
+        </p>
+      </section>
+
+      <section class="section-panel" id="terms">
+        <h2>Terms &amp; Conditions</h2>
+        <p>
+          Terms and conditions will be added here for Incoralis Group Limited and future Incoralis products.
+        </p>
+      </section>
+
+      <section class="section-panel" id="disclaimer">
+        <h2>Disclaimer</h2>
+        <p>
+          Disclaimer information will be added here, including any app-specific notices once products are released.
+        </p>
+      </section>
+
+      <section class="section-panel" id="contact">
+        <h2>Contact</h2>
+        <p>
+          Email: admin@incoralis.co.uk
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      © Incoralis Group Limited
+    </footer>
+  </div>
 </body>
 </html>
