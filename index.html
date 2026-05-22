@@ -7,19 +7,6 @@
   <link rel="icon" type="image/png" href="favicon.png" />
 
   <style>
-    :root {
-      --blue: #007cff;
-      --cyan: #00eaff;
-      --purple: #8f38ff;
-      --magenta: #ff2fd6;
-      --pink: #ff3c91;
-      --red: #ff392f;
-      --orange: #ff8a1c;
-      --white: #ffffff;
-      --soft-white: rgba(255, 255, 255, 0.76);
-      --panel-black: rgba(2, 3, 8, 0.78);
-    }
-
     * {
       box-sizing: border-box;
     }
@@ -29,456 +16,169 @@
       margin: 0;
       min-height: 100%;
       background: #000;
-      color: var(--white);
-      font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+      color: #fff;
+      font-family: "Orbitron", Arial, sans-serif;
       overflow-x: hidden;
     }
 
     body {
       min-height: 100vh;
-      background-image:
-        radial-gradient(circle at 50% 34%, rgba(110, 30, 255, 0.10), transparent 32%),
-        radial-gradient(circle at 76% 52%, rgba(255, 82, 28, 0.09), transparent 30%),
-        linear-gradient(115deg, rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.34), rgba(0, 0, 0, 0.92)),
-        url("background.png");
-      background-size: cover;
+      background-image: url("background_landscape.png");
+      background-size: 100% 100%;
       background-position: center;
       background-repeat: no-repeat;
     }
 
     .page {
       min-height: 100vh;
-      padding: clamp(18px, 3vw, 42px) clamp(16px, 4vw, 58px);
+      padding: clamp(14px, 3vw, 40px);
       display: grid;
       grid-template-rows: auto 1fr auto;
-      gap: 18px;
     }
 
     header {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      gap: 22px;
+      gap: clamp(12px, 3vw, 32px);
     }
 
     .top-tabs {
       display: grid;
-      grid-template-columns: repeat(4, minmax(110px, 150px));
-      align-items: stretch;
+      grid-template-columns: repeat(4, minmax(74px, 130px));
+      gap: clamp(6px, 1vw, 12px);
+      align-items: start;
     }
 
     .top-tab {
-      position: relative;
-      min-height: 92px;
-      padding: 14px 10px 12px;
-      text-decoration: none;
-      color: var(--white);
+      display: block;
       text-align: center;
-      border-left: 1px solid rgba(255, 255, 255, 0.08);
-      border-right: 1px solid rgba(255, 255, 255, 0.045);
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.006) 68%, rgba(0, 0, 0, 0));
+      text-decoration: none;
       transition: transform 180ms ease, filter 180ms ease;
-    }
-
-    .top-tab::after {
-      content: "";
-      position: absolute;
-      left: 10%;
-      right: 10%;
-      bottom: 0;
-      height: 2px;
-      background: var(--accent);
-      box-shadow: 0 0 16px var(--accent), 0 0 30px var(--accent);
     }
 
     .top-tab:hover,
     .top-tab:focus-visible {
       transform: translateY(-3px);
-      filter: brightness(1.22);
-      outline: none;
-    }
-
-    .tab-icon {
-      display: block;
-      color: var(--accent);
-      font-size: 31px;
-      line-height: 1;
-      margin-bottom: 13px;
-      text-shadow:
-        0 0 8px var(--accent),
-        0 0 22px var(--accent);
-    }
-
-    .tab-label {
-      display: block;
-      font-size: clamp(10px, 1vw, 13px);
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
-      white-space: nowrap;
-    }
-
-    .group-logo {
-      width: clamp(170px, 24vw, 380px);
-      height: auto;
-      object-fit: contain;
-      object-position: top right;
-      filter:
-        drop-shadow(0 0 8px rgba(0, 234, 255, 0.24))
-        drop-shadow(0 0 14px rgba(255, 47, 214, 0.14));
-    }
-
-    main {
-      position: relative;
-      display: grid;
-      align-content: center;
-      justify-items: center;
-      gap: clamp(28px, 5vh, 48px);
-      padding: clamp(16px, 3vh, 34px) 0;
-    }
-
-    .neon-panel {
-      position: relative;
-      isolation: isolate;
-      background:
-        linear-gradient(96deg, rgba(0, 124, 255, 0.10), rgba(143, 56, 255, 0.055) 38%, rgba(255, 47, 214, 0.055) 64%, rgba(255, 138, 28, 0.11)),
-        linear-gradient(180deg, rgba(255, 255, 255, 0.095), rgba(255, 255, 255, 0.016)),
-        var(--panel-black);
-      border-radius: 34px;
-      box-shadow:
-        inset 0 0 34px rgba(255, 255, 255, 0.035),
-        inset 0 1px 0 rgba(255, 255, 255, 0.20),
-        0 0 14px rgba(0, 124, 255, 0.64),
-        0 0 22px rgba(143, 56, 255, 0.50),
-        0 0 28px rgba(255, 57, 47, 0.34),
-        0 26px 64px rgba(0, 0, 0, 0.70);
-    }
-
-    .neon-panel::before {
-      content: "";
-      position: absolute;
-      inset: -2px;
-      border-radius: inherit;
-      z-index: -1;
-      background:
-        linear-gradient(90deg, var(--blue), var(--purple), var(--magenta), var(--red), var(--orange));
-      box-shadow:
-        0 0 16px rgba(0, 124, 255, 0.9),
-        0 0 24px rgba(143, 56, 255, 0.7),
-        0 0 28px rgba(255, 57, 47, 0.65),
-        0 0 36px rgba(255, 138, 28, 0.45);
-    }
-
-    .neon-panel::after {
-      content: "";
-      position: absolute;
-      inset: 2px;
-      border-radius: 31px;
-      z-index: -1;
-      background: rgba(2, 3, 8, 0.90);
-    }
-
-    .coming-panel {
-      width: min(790px, 76vw);
-      min-height: clamp(156px, 20vw, 236px);
-      padding: clamp(26px, 4vw, 44px);
-      text-align: center;
-    }
-
-    .coming-small {
-      margin: 0;
-      font-size: clamp(28px, 4.2vw, 51px);
-      line-height: 1;
-      letter-spacing: 0.17em;
-      text-transform: uppercase;
-      font-weight: 500;
-      background: linear-gradient(90deg, var(--blue), #9fc9ff, var(--purple), var(--pink));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      text-shadow: 0 0 20px rgba(0, 124, 255, 0.34);
-    }
-
-    .coming-large {
-      margin-top: 10px;
-      font-size: clamp(41px, 6.3vw, 87px);
-      line-height: 0.98;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-weight: 700;
-      background: linear-gradient(90deg, var(--blue), #c3e2ff 24%, var(--purple) 46%, var(--magenta) 68%, var(--orange));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      filter:
-        drop-shadow(0 0 8px rgba(0, 124, 255, 0.38))
-        drop-shadow(0 0 12px rgba(255, 57, 47, 0.22));
-    }
-
-    .coming-line {
-      width: 82%;
-      height: 1px;
-      margin: clamp(18px, 2.2vw, 27px) auto 0;
-      background: linear-gradient(90deg, transparent, rgba(0, 124, 255, 0.55), rgba(255, 255, 255, 0.38), rgba(255, 57, 47, 0.42), transparent);
-    }
-
-    .coming-tagline {
-      margin-top: clamp(15px, 2vw, 24px);
-      color: rgba(255, 255, 255, 0.78);
-      font-size: clamp(11px, 1.4vw, 16px);
-      letter-spacing: 0.26em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    .dot-blue {
-      color: var(--blue);
-      text-shadow: 0 0 12px var(--blue);
-    }
-
-    .dot-pink {
-      color: var(--pink);
-      text-shadow: 0 0 12px var(--pink);
-    }
-
-    .incoralis-panel {
-      width: min(710px, 72vw);
-      min-height: clamp(116px, 15.5vw, 166px);
-      margin-left: clamp(-430px, -28vw, -160px);
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: center;
-      gap: clamp(15px, 2vw, 24px);
-      padding: clamp(22px, 3.4vw, 38px) clamp(24px, 4vw, 44px);
-      text-decoration: none;
-      color: var(--white);
-      transition: transform 180ms ease, filter 180ms ease, box-shadow 180ms ease;
-    }
-
-    .incoralis-panel:hover,
-    .incoralis-panel:focus-visible {
-      transform: translateY(-5px);
       filter: brightness(1.18);
       outline: none;
     }
 
-    .incoralis-title {
-      margin: 0;
-      font-size: clamp(29px, 4.6vw, 59px);
-      line-height: 1;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-      font-weight: 600;
-      background: linear-gradient(90deg, var(--cyan), #8ecbff 20%, var(--purple) 48%, var(--magenta) 72%, var(--orange));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      filter:
-        drop-shadow(0 0 7px rgba(0, 234, 255, 0.26))
-        drop-shadow(0 0 10px rgba(255, 47, 214, 0.20));
+    .top-tab img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
-    .incoralis-sub {
-      margin-top: 9px;
-      color: rgba(255, 255, 255, 0.73);
-      font-size: clamp(11px, 1.5vw, 16px);
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      white-space: nowrap;
+    .group-logo {
+      width: clamp(120px, 21vw, 330px);
+      height: auto;
+      object-fit: contain;
+      object-position: top right;
     }
 
-    .incoralis-arrow {
-      font-size: clamp(48px, 6vw, 76px);
-      line-height: 1;
-      color: var(--orange);
-      text-shadow:
-        0 0 9px var(--orange),
-        0 0 18px rgba(255, 57, 47, 0.75);
-      transform: translateY(-2px);
+    main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: clamp(42px, 7vh, 92px);
+      padding: clamp(24px, 5vh, 64px) 0;
+    }
+
+    .app-news {
+      width: min(760px, 82vw);
+      height: auto;
+      display: block;
+    }
+
+    .incoralis-link {
+      display: block;
+      width: min(620px, 72vw);
+      margin-left: clamp(-260px, -18vw, -80px);
+      transition: transform 180ms ease, filter 180ms ease;
+    }
+
+    .incoralis-link:hover,
+    .incoralis-link:focus-visible {
+      transform: translateY(-4px);
+      filter: brightness(1.12);
+      outline: none;
+    }
+
+    .incoralis-link img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
     footer {
-      position: relative;
-      width: min(950px, 86vw);
-      margin: 0 auto;
-      padding: 0 0 8px;
       text-align: center;
-      color: rgba(255, 255, 255, 0.70);
-      font-size: clamp(10px, 1.2vw, 15px);
-      letter-spacing: 0.42em;
+      font-size: clamp(9px, 1vw, 13px);
+      letter-spacing: 0.28em;
       text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.7);
+      padding-bottom: 8px;
     }
 
-    footer::before,
-    footer::after {
-      content: "";
-      position: absolute;
-      top: 8px;
-      height: 1px;
-      width: 35%;
-      background: linear-gradient(90deg, transparent, rgba(0, 124, 255, 0.65), rgba(255, 47, 214, 0.38));
+    @media (orientation: portrait) {
+      body {
+        background-image: url("background_portrait.png");
+      }
     }
 
-    footer::before {
-      left: 0;
-    }
-
-    footer::after {
-      right: 0;
-      background: linear-gradient(90deg, rgba(255, 47, 214, 0.38), rgba(0, 234, 255, 0.65), transparent);
-    }
-
-    @media (max-width: 1100px) {
+    @media (max-width: 900px) {
       .top-tabs {
-        grid-template-columns: repeat(4, minmax(98px, 132px));
-      }
-
-      .incoralis-panel {
-        margin-left: clamp(-180px, -14vw, -60px);
-      }
-    }
-
-    @media (max-width: 820px) {
-      header {
-        gap: 16px;
-      }
-
-      .top-tabs {
-        grid-template-columns: repeat(2, minmax(110px, 1fr));
-        max-width: 330px;
-      }
-
-      .top-tab {
-        min-height: 74px;
-        padding: 10px 8px 9px;
-      }
-
-      .tab-icon {
-        font-size: 24px;
-        margin-bottom: 8px;
+        grid-template-columns: repeat(2, minmax(72px, 118px));
       }
 
       .group-logo {
-        width: clamp(135px, 29vw, 250px);
+        width: clamp(110px, 28vw, 230px);
       }
 
-      .coming-panel,
-      .incoralis-panel {
+      .app-news {
         width: min(720px, 92vw);
+      }
+
+      .incoralis-link {
+        width: min(560px, 84vw);
         margin-left: 0;
       }
-
-      footer {
-        width: 92vw;
-        letter-spacing: 0.25em;
-      }
-
-      footer::before,
-      footer::after {
-        width: 27%;
-      }
     }
 
-    @media (max-width: 560px) {
+    @media (max-width: 520px) {
       .page {
-        padding: 13px;
-        gap: 14px;
+        padding: 12px;
       }
 
       header {
-        align-items: flex-start;
-        gap: 10px;
+        gap: 8px;
       }
 
       .top-tabs {
-        grid-template-columns: repeat(2, minmax(82px, 1fr));
-        max-width: 204px;
-      }
-
-      .top-tab {
-        min-height: 57px;
-        padding: 7px 5px 6px;
-      }
-
-      .tab-icon {
-        font-size: 17px;
-        margin-bottom: 6px;
-      }
-
-      .tab-label {
-        font-size: 8px;
-        letter-spacing: 0.04em;
-        white-space: normal;
+        grid-template-columns: repeat(2, minmax(58px, 88px));
+        gap: 5px;
       }
 
       .group-logo {
-        width: clamp(105px, 36vw, 154px);
+        width: clamp(92px, 34vw, 145px);
       }
 
       main {
-        gap: 22px;
-        padding-top: 16px;
+        gap: clamp(32px, 6vh, 54px);
+        padding-top: 34px;
       }
 
-      .coming-panel {
+      .app-news {
         width: 100%;
-        min-height: 148px;
-        border-radius: 24px;
-        padding: 24px 16px;
       }
 
-      .coming-panel::after {
-        border-radius: 21px;
-      }
-
-      .coming-small {
-        letter-spacing: 0.12em;
-      }
-
-      .coming-large {
-        letter-spacing: 0.055em;
-      }
-
-      .coming-tagline {
-        white-space: normal;
-        letter-spacing: 0.12em;
-        line-height: 1.6;
-      }
-
-      .incoralis-panel {
-        width: 100%;
-        min-height: 112px;
-        border-radius: 24px;
-        padding: 20px 18px;
-      }
-
-      .incoralis-panel::after {
-        border-radius: 21px;
-      }
-
-      .incoralis-title {
-        letter-spacing: 0.08em;
-      }
-
-      .incoralis-sub {
-        white-space: normal;
-        letter-spacing: 0.12em;
-        line-height: 1.5;
-      }
-
-      .incoralis-arrow {
-        font-size: 48px;
+      .incoralis-link {
+        width: 94%;
       }
 
       footer {
-        letter-spacing: 0.12em;
-        line-height: 1.6;
-      }
-
-      footer::before,
-      footer::after {
-        display: none;
+        letter-spacing: 0.14em;
       }
     }
   </style>
@@ -488,24 +188,20 @@
   <div class="page">
     <header>
       <nav class="top-tabs" aria-label="Incoralis Group legal navigation">
-        <a href="incoralis.html#disclaimer" class="top-tab" style="--accent: var(--orange);">
-          <span class="tab-icon">♢</span>
-          <span class="tab-label">Disclaimer</span>
+        <a href="incoralis.html#disclaimer" class="top-tab">
+          <img src="Disclaimer.png" alt="Disclaimer" />
         </a>
 
-        <a href="incoralis.html#privacy" class="top-tab" style="--accent: var(--magenta);">
-          <span class="tab-icon">▣</span>
-          <span class="tab-label">Privacy Policy</span>
+        <a href="incoralis.html#privacy" class="top-tab">
+          <img src="Privacy.png" alt="Privacy Policy" />
         </a>
 
-        <a href="incoralis.html#terms" class="top-tab" style="--accent: var(--blue);">
-          <span class="tab-icon">▤</span>
-          <span class="tab-label">Terms &amp; Conditions</span>
+        <a href="incoralis.html#terms" class="top-tab">
+          <img src="Terms.png" alt="Terms and Conditions" />
         </a>
 
-        <a href="incoralis.html#contact" class="top-tab" style="--accent: var(--cyan);">
-          <span class="tab-icon">☎</span>
-          <span class="tab-label">Contact</span>
+        <a href="incoralis.html#contact" class="top-tab">
+          <img src="Contact.png" alt="Contact" />
         </a>
       </nav>
 
@@ -513,28 +209,13 @@
     </header>
 
     <main>
-      <section class="neon-panel coming-panel" aria-label="New app coming soon">
-        <h1 class="coming-small">New App</h1>
-        <div class="coming-large">Coming Soon!</div>
-        <div class="coming-line"></div>
-        <div class="coming-tagline">
-          Innovative <span class="dot-blue">•</span> Reliable <span class="dot-pink">•</span> Designed for you
-        </div>
-      </section>
+      <img src="Appnews.png" alt="New app coming soon" class="app-news" />
 
-      <a href="incoralis.html" class="neon-panel incoralis-panel" aria-label="Open Incoralis Ltd page">
-        <div>
-          <h2 class="incoralis-title">Incoralis Ltd</h2>
-          <div class="incoralis-sub">Explore our new app</div>
-        </div>
-        <div class="incoralis-arrow">›</div>
+      <a href="incoralis.html" class="incoralis-link" aria-label="Open Incoralis Ltd page">
+        <img src="Incoralisbutton.png" alt="Incoralis Ltd - Explore our new app" />
       </a>
     </main>
 
-    <footer>Incoralis Group Limited</footer>
-  </div>
-</body>
-</html>
     <footer>Incoralis Group Limited</footer>
   </div>
 </body>
