@@ -1,1 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Incoralis Ltd Contact</title>
 
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: #000;
+      color: #fff;
+      font-family: "Orbitron", Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    body {
+      min-height: 100vh;
+      background-image: url("background_landscape.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .panel {
+      width: min(720px, 95vw);
+      padding: clamp(26px, 5vw, 54px);
+      border-radius: 28px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)),
+        rgba(3, 5, 12, 0.88);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow:
+        0 0 28px rgba(0,191,255,0.18),
+        0 0 36px rgba(168,92,255,0.14);
+      text-align: center;
+    }
+
+    .logo {
+      width: clamp(180px, 30vw, 360px);
+      height: auto;
+      margin-bottom: 34px;
+    }
+
+    .info {
+      font-size: clamp(14px, 1.7vw, 19px);
+      line-height: 1.9;
+      color: rgba(255,255,255,0.88);
+      letter-spacing: 0.03em;
+    }
+
+    .email-link {
+      margin-top: 28px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #00ebff;
+      font-size: clamp(15px, 1.8vw, 20px);
+      transition: transform 180ms ease, filter 180ms ease;
+    }
+
+    .email-link:hover,
+    .email-link:focus-visible {
+      transform: translateY(-2px);
+      filter: brightness(1.15);
+      outline: none;
+    }
+
+    .email-icon {
+      font-size: clamp(20px, 2vw, 28px);
+    }
+
+    @media (orientation: portrait) {
+      body {
+        background-image: url("background_portrait.png");
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="panel">
+    <img
+      src="IncoralisLogo.png"
+      alt="Incoralis Ltd"
+      class="logo"
+    />
+
+    <div class="info">
+      Company Number: 17217832
+      <br /><br />
+      Registered Office
+      <br />
+      Piccadilly Business Centre
+      <br />
+      Blackett Street
+      <br />
+      Manchester
+      <br />
+      M12 6AE
+    </div>
+
+    <a
+      href="mailto:enquiries@incoralis.co.uk"
+      class="email-link"
+    >
+      <span class="email-icon">✉</span>
+      <span>enquiries@incoralis.co.uk</span>
+    </a>
+  </div>
+</body>
+</html>
