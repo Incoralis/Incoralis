@@ -4,7 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Incoralis Group Limited</title>
+
   <link rel="icon" type="image/png" href="favicon.png" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
     * {
@@ -31,7 +37,7 @@
 
     .page {
       min-height: 100vh;
-      padding: clamp(14px, 3vw, 40px);
+      padding: clamp(12px, 2vw, 32px);
       display: grid;
       grid-template-rows: auto 1fr auto;
     }
@@ -40,13 +46,13 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      gap: clamp(12px, 3vw, 32px);
+      gap: clamp(10px, 2vw, 24px);
     }
 
     .top-tabs {
       display: grid;
-      grid-template-columns: repeat(4, minmax(74px, 130px));
-      gap: clamp(6px, 1vw, 12px);
+      grid-template-columns: repeat(4, minmax(52px, 88px));
+      gap: clamp(4px, 0.7vw, 8px);
       align-items: start;
     }
 
@@ -54,7 +60,9 @@
       display: block;
       text-align: center;
       text-decoration: none;
-      transition: transform 180ms ease, filter 180ms ease;
+      transition:
+        transform 180ms ease,
+        filter 180ms ease;
     }
 
     .top-tab:hover,
@@ -71,7 +79,7 @@
     }
 
     .group-logo {
-      width: clamp(120px, 21vw, 330px);
+      width: clamp(90px, 14vw, 210px);
       height: auto;
       object-fit: contain;
       object-position: top right;
@@ -82,21 +90,23 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: clamp(42px, 7vh, 92px);
-      padding: clamp(24px, 5vh, 64px) 0;
+      gap: clamp(34px, 6vh, 70px);
+      padding: clamp(12px, 4vh, 42px) 0;
     }
 
     .app-news {
-      width: min(760px, 82vw);
+      width: min(520px, 58vw);
       height: auto;
       display: block;
     }
 
     .incoralis-link {
       display: block;
-      width: min(620px, 72vw);
-      margin-left: clamp(-260px, -18vw, -80px);
-      transition: transform 180ms ease, filter 180ms ease;
+      width: min(340px, 40vw);
+      margin-left: clamp(-220px, -15vw, -70px);
+      transition:
+        transform 180ms ease,
+        filter 180ms ease;
     }
 
     .incoralis-link:hover,
@@ -114,11 +124,12 @@
 
     footer {
       text-align: center;
-      font-size: clamp(9px, 1vw, 13px);
-      letter-spacing: 0.28em;
+      font-size: clamp(8px, 0.85vw, 11px);
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.7);
+      color: rgba(255, 255, 255, 0.46);
       padding-bottom: 8px;
+      font-family: "Orbitron", Arial, sans-serif;
     }
 
     @media (orientation: portrait) {
@@ -129,44 +140,44 @@
 
     @media (max-width: 900px) {
       .top-tabs {
-        grid-template-columns: repeat(2, minmax(72px, 118px));
+        grid-template-columns: repeat(2, minmax(54px, 80px));
       }
 
       .group-logo {
-        width: clamp(110px, 28vw, 230px);
+        width: clamp(90px, 24vw, 170px);
       }
 
       .app-news {
-        width: min(720px, 92vw);
+        width: min(500px, 82vw);
       }
 
       .incoralis-link {
-        width: min(560px, 84vw);
+        width: min(300px, 62vw);
         margin-left: 0;
       }
     }
 
     @media (max-width: 520px) {
       .page {
-        padding: 12px;
+        padding: 10px;
       }
 
       header {
-        gap: 8px;
+        gap: 6px;
       }
 
       .top-tabs {
-        grid-template-columns: repeat(2, minmax(58px, 88px));
-        gap: 5px;
+        grid-template-columns: repeat(2, minmax(48px, 68px));
+        gap: 4px;
       }
 
       .group-logo {
-        width: clamp(92px, 34vw, 145px);
+        width: clamp(78px, 30vw, 120px);
       }
 
       main {
-        gap: clamp(32px, 6vh, 54px);
-        padding-top: 34px;
+        gap: clamp(26px, 5vh, 44px);
+        padding-top: 22px;
       }
 
       .app-news {
@@ -174,11 +185,12 @@
       }
 
       .incoralis-link {
-        width: 94%;
+        width: 82%;
       }
 
       footer {
-        letter-spacing: 0.14em;
+        letter-spacing: 0.1em;
+        line-height: 1.5;
       }
     }
   </style>
@@ -188,6 +200,7 @@
   <div class="page">
     <header>
       <nav class="top-tabs" aria-label="Incoralis Group legal navigation">
+
         <a href="incoralis.html#disclaimer" class="top-tab">
           <img src="Disclaimer.png" alt="Disclaimer" />
         </a>
@@ -203,20 +216,41 @@
         <a href="incoralis.html#contact" class="top-tab">
           <img src="Contact.png" alt="Contact" />
         </a>
+
       </nav>
 
-      <img src="Logo2.png" alt="Incoralis Group Limited" class="group-logo" />
+      <img
+        src="Logo2.png"
+        alt="Incoralis Group Limited"
+        class="group-logo"
+      />
     </header>
 
     <main>
-      <img src="Appnews.png" alt="New app coming soon" class="app-news" />
 
-      <a href="incoralis.html" class="incoralis-link" aria-label="Open Incoralis Ltd page">
-        <img src="Incoralisbutton.png" alt="Incoralis Ltd - Explore our new app" />
+      <img
+        src="Appnews.png"
+        alt="New app coming soon"
+        class="app-news"
+      />
+
+      <a
+        href="incoralis.html"
+        class="incoralis-link"
+        aria-label="Open Incoralis Ltd page"
+      >
+        <img
+          src="Incoralisbutton.png"
+          alt="Incoralis Ltd"
+        />
       </a>
+
     </main>
 
-    <footer>Incoralis Group Limited</footer>
+    <footer>
+      © 2026 Incoralis Group Limited. All rights reserved.
+    </footer>
+
   </div>
 </body>
 </html>
