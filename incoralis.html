@@ -8,11 +8,7 @@
 
   <style>
     :root {
-      --blue: #00bfff;
       --cyan: #00ebff;
-      --purple: #a85cff;
-      --pink: #ff3fb4;
-      --orange: #ff7a18;
       --white: #ffffff;
       --soft: rgba(255, 255, 255, 0.78);
       --panel: rgba(3, 5, 12, 0.82);
@@ -58,6 +54,13 @@
       gap: 18px;
     }
 
+    .top-left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 18px;
+    }
+
     .back-link {
       display: inline-flex;
       align-items: center;
@@ -81,6 +84,33 @@
       outline: none;
     }
 
+    .top-tabs {
+      display: grid;
+      grid-template-columns: repeat(4, auto);
+      gap: clamp(4px, 0.6vw, 9px);
+      align-items: start;
+    }
+
+    .top-tab {
+      display: block;
+      width: clamp(32px, 4.8vw, 54px);
+      text-decoration: none;
+      transition: transform 180ms ease, filter 180ms ease;
+    }
+
+    .top-tab:hover,
+    .top-tab:focus-visible {
+      transform: translateY(-2px);
+      filter: brightness(1.18);
+      outline: none;
+    }
+
+    .top-tab img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
     .logo {
       width: clamp(150px, 22vw, 360px);
       max-height: 155px;
@@ -95,6 +125,12 @@
       justify-items: center;
       gap: clamp(24px, 5vh, 46px);
       padding: 10px 0 24px;
+    }
+
+    .app-news {
+      width: min(520px, 70vw);
+      height: auto;
+      display: block;
     }
 
     .product-panel {
@@ -114,28 +150,11 @@
         0 0 30px rgba(255,122,24,0.20);
     }
 
-    .product-panel::before {
-      content: "";
-      position: absolute;
-      inset: -2px;
-      border-radius: inherit;
-      padding: 2px;
-      background: linear-gradient(90deg, var(--blue), var(--purple), var(--pink), var(--orange));
-      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      pointer-events: none;
-    }
-
     .product-panel h1 {
       margin: 0;
       font-size: clamp(36px, 6vw, 78px);
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      background: linear-gradient(90deg, var(--blue), var(--white), var(--purple), var(--pink), var(--orange));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
     }
 
     .product-panel p {
@@ -144,57 +163,6 @@
       color: var(--soft);
       font-size: clamp(14px, 2vw, 19px);
       line-height: 1.7;
-    }
-
-    .legal-tabs {
-      width: min(820px, 94vw);
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: clamp(12px, 2vw, 22px);
-    }
-
-    .legal-tab {
-      min-height: clamp(112px, 15vw, 150px);
-      padding: 18px 12px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      text-decoration: none;
-      color: var(--white);
-      border-radius: 18px;
-      background:
-        linear-gradient(145deg, rgba(255,255,255,0.11), rgba(255,255,255,0.025)),
-        rgba(3, 5, 12, 0.78);
-      border: 2px solid var(--accent);
-      box-shadow:
-        inset 0 0 18px rgba(255,255,255,0.05),
-        0 0 20px color-mix(in srgb, var(--accent) 35%, transparent);
-      transition: transform 180ms ease, box-shadow 180ms ease;
-    }
-
-    .legal-tab:hover,
-    .legal-tab:focus-visible {
-      transform: translateY(-5px);
-      box-shadow:
-        inset 0 0 20px rgba(255,255,255,0.07),
-        0 0 34px color-mix(in srgb, var(--accent) 58%, transparent);
-      outline: none;
-    }
-
-    .legal-icon {
-      font-size: clamp(28px, 4vw, 44px);
-      color: var(--accent);
-      text-shadow: 0 0 18px var(--accent);
-      margin-bottom: 14px;
-    }
-
-    .legal-label {
-      font-size: clamp(11px, 1.4vw, 15px);
-      line-height: 1.35;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
     }
 
     .content-block {
@@ -228,10 +196,6 @@
     }
 
     @media (max-width: 820px) {
-      .legal-tabs {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
       .logo {
         width: clamp(140px, 28vw, 260px);
       }
@@ -250,12 +214,12 @@
         padding: 8px 12px;
       }
 
-      .legal-tabs {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+      .top-tab {
+        width: clamp(28px, 10vw, 42px);
       }
 
-      .legal-tab {
-        min-height: 108px;
+      .app-news {
+        width: 100%;
       }
     }
   </style>
@@ -264,36 +228,40 @@
 <body>
   <div class="page">
     <header>
-      <a class="back-link" href="index.html">← Incoralis Group</a>
-      <img src="Logo2.png" alt="Incoralis Group Limited" class="logo" />
+      <div class="top-left">
+        <a class="back-link" href="index.html">← Back to Main Page</a>
+
+        <nav class="top-tabs" aria-label="Incoralis legal and support links">
+          <a href="#disclaimer" class="top-tab">
+            <img src="Disclaimer.png" alt="Disclaimer" />
+          </a>
+
+          <a href="#privacy" class="top-tab">
+            <img src="Privacy.png" alt="Privacy Policy" />
+          </a>
+
+          <a href="#terms" class="top-tab">
+            <img src="Terms.png" alt="Terms and Conditions" />
+          </a>
+
+          <a href="#contact" class="top-tab">
+            <img src="Contact.png" alt="Contact" />
+          </a>
+        </nav>
+      </div>
+
+      <img src="Logo3.png" alt="Incoralis Ltd" class="logo" />
     </header>
 
     <main>
+      <img src="Appnews.png" alt="New app coming soon" class="app-news" />
+
       <section class="product-panel">
         <h1>Incoralis Ltd</h1>
         <p>
           This section is being prepared for app information, screenshots, store links, support details and app-specific legal pages.
         </p>
       </section>
-
-      <nav class="legal-tabs" aria-label="Incoralis legal and support links">
-        <a href="#disclaimer" class="legal-tab" style="--accent: var(--orange);">
-          <span class="legal-icon">▤</span>
-          <span class="legal-label">Disclaimer</span>
-        </a>
-        <a href="#privacy" class="legal-tab" style="--accent: var(--purple);">
-          <span class="legal-icon">▣</span>
-          <span class="legal-label">Privacy Policy</span>
-        </a>
-        <a href="#terms" class="legal-tab" style="--accent: var(--blue);">
-          <span class="legal-icon">▥</span>
-          <span class="legal-label">Terms &amp; Conditions</span>
-        </a>
-        <a href="#contact" class="legal-tab" style="--accent: var(--cyan);">
-          <span class="legal-icon">☎</span>
-          <span class="legal-label">Contact</span>
-        </a>
-      </nav>
 
       <section class="content-block" id="disclaimer">
         <h2>Disclaimer</h2>
