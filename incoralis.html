@@ -16,7 +16,6 @@
     :root {
       --cyan: #00ebff;
       --white: #ffffff;
-      --soft: rgba(255, 255, 255, 0.78);
     }
 
     * {
@@ -27,7 +26,7 @@
     body {
       margin: 0;
       min-height: 100%;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: "Orbitron", Arial, sans-serif;
       color: var(--white);
       background: #000;
       overflow-x: hidden;
@@ -64,22 +63,14 @@
       align-items: center;
       min-height: 42px;
       padding: 10px 18px;
-      color: var(--white);
+      color: #ffffff;
       text-decoration: none;
       text-transform: uppercase;
       font-size: clamp(11px, 1vw, 13px);
       letter-spacing: 0.12em;
-      border-bottom: 2px solid var(--cyan);
+      border-bottom: 2px solid #00ebff;
       background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0));
       box-shadow: 0 8px 22px rgba(0,235,255,0.18);
-      transition: transform 180ms ease, box-shadow 180ms ease;
-    }
-
-    .back-link:hover,
-    .back-link:focus-visible {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 30px rgba(0,235,255,0.34);
-      outline: none;
     }
 
     .logo {
@@ -87,7 +78,6 @@
       max-height: 220px;
       object-fit: contain;
       object-position: top right;
-      filter: drop-shadow(0 0 18px rgba(0, 235, 255, 0.22));
     }
 
     main {
@@ -110,7 +100,6 @@
       justify-content: center;
       gap: clamp(12px, 2vw, 20px);
       align-items: center;
-      margin-top: clamp(10px, 2vh, 22px);
     }
 
     .legal-tab {
@@ -158,10 +147,6 @@
         width: clamp(145px, 46vw, 230px);
       }
 
-      .back-link {
-        padding: 8px 12px;
-      }
-
       .legal-tab {
         width: clamp(72px, 20vw, 110px);
       }
@@ -188,7 +173,7 @@
         class="app-news"
       />
 
-      <nav class="legal-tabs" aria-label="Incoralis legal and support links">
+      <nav class="legal-tabs">
         <a href="#disclaimer" class="legal-tab">
           <img src="Disclaimer.png" alt="Disclaimer" />
         </a>
@@ -201,7 +186,7 @@
           <img src="Terms.png" alt="Terms and Conditions" />
         </a>
 
-        <a href="#contact" class="legal-tab">
+        <a href="Incoralis_Contact.html" class="legal-tab">
           <img src="Contact.png" alt="Contact" />
         </a>
       </nav>
