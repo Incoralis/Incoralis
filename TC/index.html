@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Incoralis Ltd</title>
 
-  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="icon" type="image/png" href="../assets/favicon.png" />
 
   <link
     href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap"
@@ -29,7 +29,7 @@
 
     body {
       min-height: 100vh;
-      background-image: url("background_landscape.png");
+      background-image: url("../assets/background_landscape.png");
       background-size: 100% 100%;
       background-position: center;
       background-repeat: no-repeat;
@@ -65,8 +65,8 @@
     }
 
     .logo {
-      width: clamp(180px, 26vw, 420px);
-      max-height: 220px;
+      width: clamp(170px, 24vw, 380px);
+      max-height: 200px;
       object-fit: contain;
       object-position: top right;
     }
@@ -128,13 +128,13 @@
 
     @media (orientation: portrait) {
       body {
-        background-image: url("background_portrait.png");
+        background-image: url("../assets/background_portrait.png");
       }
     }
 
     @media (max-width: 820px) {
       .logo {
-        width: clamp(170px, 34vw, 320px);
+        width: clamp(160px, 32vw, 300px);
       }
     }
 
@@ -148,7 +148,7 @@
       }
 
       .logo {
-        width: clamp(145px, 46vw, 230px);
+        width: clamp(140px, 44vw, 220px);
       }
 
       main {
@@ -176,33 +176,33 @@
 <body>
   <div class="page">
     <header>
-      <a class="back-link" href="index.html">← Back to Main Page</a>
+      <a class="back-link" href="../Main/index.html">← Back</a>
 
-      <img src="incoralis_logo3.png" alt="Incoralis Ltd" class="logo" />
+      <img src="../assets/incoralis_logo3.png" alt="Incoralis Ltd" class="logo" />
     </header>
 
     <main>
       <img
-        src="appnews.png?v=2"
+        src="../assets/appnews.png?v=2"
         alt="New app coming soon"
         class="app-news"
       />
 
       <nav class="legal-tabs" aria-label="Travel ChecknGo legal navigation">
-        <a href="tc_disclaimer.html" class="legal-tab">
-          <img src="disclaimer.png" alt="Disclaimer" />
+        <a href="disclaimer.html" class="legal-tab">
+          <img src="../assets/disclaimer.png" alt="Disclaimer" />
         </a>
 
-        <a href="tc_privacy.html" class="legal-tab">
-          <img src="privacy.png" alt="Privacy Policy" />
+        <a href="privacy.html" class="legal-tab">
+          <img src="../assets/privacy.png" alt="Privacy Policy" />
         </a>
 
-        <a href="tc_terms.html" class="legal-tab">
-          <img src="terms.png" alt="Terms and Conditions" />
+        <a href="terms.html" class="legal-tab">
+          <img src="../assets/terms.png" alt="Terms and Conditions" />
         </a>
 
-        <a href="tc_contact.html" class="legal-tab">
-          <img src="contact.png" alt="Contact" />
+        <a href="contact.html" class="legal-tab">
+          <img src="../assets/contact.png" alt="Contact" />
         </a>
       </nav>
     </main>
