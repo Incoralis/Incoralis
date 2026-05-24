@@ -43,9 +43,8 @@
 
     .top-bar {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
       align-items: flex-start;
-      gap: 16px;
       margin-bottom: clamp(24px, 4vh, 42px);
     }
 
@@ -70,12 +69,6 @@
       transform: translateY(-2px);
       filter: brightness(1.12);
       outline: none;
-    }
-
-    .logo {
-      width: clamp(100px, 14vw, 220px);
-      height: auto;
-      object-fit: contain;
     }
 
     .panel {
@@ -149,11 +142,7 @@
 
     @media (max-width: 640px) {
       .top-bar {
-        gap: 10px;
-      }
-
-      .logo {
-        width: clamp(90px, 28vw, 160px);
+        margin-bottom: clamp(20px, 4vh, 34px);
       }
 
       .panel {
@@ -171,12 +160,6 @@
   <div class="page">
     <div class="top-bar">
       <a class="back-link" href="index.html">← Back</a>
-
-      <img
-        src="../assets/incoralis_logo3.png"
-        alt="Incoralis Limited"
-        class="logo"
-      />
     </div>
 
     <div class="panel">
