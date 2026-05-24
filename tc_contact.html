@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Incoralis Ltd Contact</title>
+  <title>Incoralis Contact</title>
 
   <link rel="icon" type="image/png" href="favicon.png" />
 
@@ -56,6 +56,14 @@
       background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0));
       box-shadow: 0 8px 22px rgba(0,235,255,0.18);
       z-index: 10;
+      transition: transform 180ms ease, filter 180ms ease;
+    }
+
+    .back-link:hover,
+    .back-link:focus-visible {
+      transform: translateY(-2px);
+      filter: brightness(1.12);
+      outline: none;
     }
 
     .panel {
@@ -107,6 +115,20 @@
       font-size: clamp(20px, 2vw, 28px);
     }
 
+    footer {
+      position: fixed;
+      bottom: 10px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-size: clamp(8px, 0.85vw, 12px);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.42);
+      line-height: 1.7;
+      padding: 0 10px;
+    }
+
     @media (orientation: portrait) {
       body {
         background-image: url("background_portrait.png");
@@ -129,12 +151,12 @@
 </head>
 
 <body>
-  <a class="back-link" href="incoralis_index.html">← Back to Incoralis Page</a>
+  <a class="back-link" href="tc_index.html">← Back</a>
 
   <div class="panel">
     <img
       src="incoralis_logo.png"
-      alt="Incoralis Ltd"
+      alt="Incoralis Limited"
       class="logo"
     />
 
@@ -160,5 +182,9 @@
       <span>enquiries@incoralis.co.uk</span>
     </a>
   </div>
+
+  <footer>
+    © 2026 Incoralis Limited. Part of Incoralis Group Limited. All rights reserved.
+  </footer>
 </body>
 </html>
