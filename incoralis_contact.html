@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Incoralis Group Contact</title>
+  <title>Incoralis Contact</title>
 
   <link rel="icon" type="image/png" href="favicon.png" />
 
@@ -55,10 +55,11 @@
       border-bottom: 2px solid #00ebff;
       background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0));
       box-shadow: 0 8px 22px rgba(0,235,255,0.18);
+      z-index: 10;
     }
 
     .panel {
-      width: min(720px, 95vw);
+      width: min(780px, 95vw);
       padding: clamp(26px, 5vw, 54px);
       border-radius: 28px;
       background:
@@ -74,18 +75,36 @@
     .logo {
       width: clamp(180px, 30vw, 360px);
       height: auto;
-      margin-bottom: 34px;
+      margin-bottom: 30px;
     }
 
     .info {
-      font-size: clamp(14px, 1.7vw, 19px);
-      line-height: 1.9;
+      font-size: clamp(13px, 1.55vw, 18px);
+      line-height: 1.85;
       color: rgba(255,255,255,0.88);
       letter-spacing: 0.03em;
     }
 
+    .company-block {
+      margin-top: 22px;
+    }
+
+    .company-name {
+      color: #00ebff;
+      font-size: clamp(15px, 1.8vw, 20px);
+      margin-bottom: 8px;
+    }
+
+    .ownership-note {
+      margin: 22px auto;
+      max-width: 620px;
+      color: rgba(255,255,255,0.72);
+      font-size: clamp(11px, 1.25vw, 14px);
+      line-height: 1.7;
+    }
+
     .email-link {
-      margin-top: 28px;
+      margin-top: 26px;
       display: inline-flex;
       align-items: center;
       gap: 12px;
@@ -123,6 +142,14 @@
         left: 14px;
         padding: 8px 12px;
       }
+
+      .panel {
+        padding: 24px 18px;
+      }
+
+      .logo {
+        width: clamp(160px, 62vw, 260px);
+      }
     }
   </style>
 </head>
@@ -132,14 +159,26 @@
 
   <div class="panel">
     <img
-      src="group_logo.png"
-      alt="Incoralis Group Limited"
+      src="incoralis_logo.png"
+      alt="Incoralis Ltd"
       class="logo"
     />
 
     <div class="info">
-      Company Number: 17215096
-      <br /><br />
+      <div class="company-block">
+        <div class="company-name">Incoralis Ltd</div>
+        Company Number: 17217832
+      </div>
+
+      <div class="company-block">
+        <div class="company-name">Incoralis Group Limited</div>
+        Company Number: 17215096
+      </div>
+
+      <div class="ownership-note">
+        Incoralis Ltd is part of Incoralis Group Limited.
+      </div>
+
       Registered Office
       <br />
       Piccadilly Business Centre
@@ -152,11 +191,11 @@
     </div>
 
     <a
-      href="mailto:admin@incoralis.co.uk"
+      href="mailto:enquiries@incoralis.co.uk"
       class="email-link"
     >
       <span class="email-icon">✉</span>
-      <span>admin@incoralis.co.uk</span>
+      <span>enquiries@incoralis.co.uk</span>
     </a>
   </div>
 </body>
