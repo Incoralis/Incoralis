@@ -1,3 +1,6 @@
+# incoralis_contact.html
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,74 +36,79 @@
       background-size: 100% 100%;
       background-position: center;
       background-repeat: no-repeat;
+      padding: clamp(16px, 3vw, 32px);
+    }
+
+    .page {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+    }
+
+    .top-bar {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: clamp(24px, 4vh, 42px);
     }
 
     .back-link {
-      position: fixed;
-      top: 18px;
-      left: 18px;
       display: inline-flex;
       align-items: center;
-      min-height: 42px;
-      padding: 10px 18px;
+      min-height: clamp(30px, 4vw, 42px);
+      padding: clamp(6px, 1vw, 10px) clamp(10px, 1.5vw, 18px);
       color: #ffffff;
       text-decoration: none;
       text-transform: uppercase;
-      font-size: clamp(11px, 1vw, 13px);
+      font-size: clamp(8px, 0.9vw, 13px);
       letter-spacing: 0.12em;
       border-bottom: 2px solid #00ebff;
       background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0));
       box-shadow: 0 8px 22px rgba(0,235,255,0.18);
-      z-index: 10;
+      transition: transform 180ms ease, filter 180ms ease;
+    }
+
+    .back-link:hover,
+    .back-link:focus-visible {
+      transform: translateY(-2px);
+      filter: brightness(1.12);
+      outline: none;
     }
 
     .panel {
-      width: min(780px, 95vw);
-      padding: clamp(26px, 5vw, 54px);
+      width: 100%;
+      padding: clamp(22px, 4vw, 42px);
       border-radius: 28px;
       background:
         linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)),
-        rgba(3, 5, 12, 0.88);
+        rgba(3, 5, 12, 0.90);
       border: 1px solid rgba(255,255,255,0.12);
       box-shadow:
         0 0 28px rgba(0,191,255,0.18),
         0 0 36px rgba(168,92,255,0.14);
+    }
+
+    .company-section {
       text-align: center;
     }
 
+    .company-section + .company-section {
+      margin-top: clamp(38px, 6vh, 70px);
+      padding-top: clamp(34px, 5vh, 54px);
+      border-top: 1px solid rgba(255,255,255,0.10);
+    }
+
     .logo {
-      width: clamp(180px, 30vw, 360px);
+      width: clamp(170px, 26vw, 360px);
       height: auto;
-      margin-bottom: 30px;
+      margin-bottom: 28px;
     }
 
     .info {
-      font-size: clamp(13px, 1.55vw, 18px);
-      line-height: 1.85;
       color: rgba(255,255,255,0.88);
-      letter-spacing: 0.03em;
-    }
-
-    .company-block {
-      margin-top: 22px;
-    }
-
-    .company-name {
-      color: #00ebff;
-      font-size: clamp(15px, 1.8vw, 20px);
-      margin-bottom: 8px;
-    }
-
-    .ownership-note {
-      margin: 22px auto;
-      max-width: 620px;
-      color: rgba(255,255,255,0.72);
-      font-size: clamp(11px, 1.25vw, 14px);
-      line-height: 1.7;
+      font-size: clamp(13px, 1.45vw, 17px);
+      line-height: 1.9;
+      letter-spacing: 0.04em;
     }
 
     .email-link {
@@ -111,6 +119,7 @@
       text-decoration: none;
       color: #00ebff;
       font-size: clamp(15px, 1.8vw, 20px);
+      letter-spacing: 0.05em;
       transition: transform 180ms ease, filter 180ms ease;
     }
 
@@ -125,78 +134,114 @@
       font-size: clamp(20px, 2vw, 28px);
     }
 
+    footer {
+      margin-top: 28px;
+      text-align: center;
+      font-size: clamp(7px, 0.7vw, 10px);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.42);
+      line-height: 1.7;
+    }
+
     @media (orientation: portrait) {
       body {
         background-image: url("background_portrait.png");
       }
     }
 
-    @media (max-width: 520px) {
-      body {
-        align-items: flex-start;
-        padding-top: 92px;
-      }
-
-      .back-link {
-        top: 14px;
-        left: 14px;
-        padding: 8px 12px;
-      }
-
+    @media (max-width: 640px) {
       .panel {
-        padding: 24px 18px;
+        padding: 22px 18px;
       }
 
       .logo {
-        width: clamp(160px, 62vw, 260px);
+        width: clamp(150px, 60vw, 260px);
       }
     }
   </style>
 </head>
 
 <body>
-  <a class="back-link" href="index.html">← Back to Main Page</a>
-
-  <div class="panel">
-    <img
-      src="incoralis_logo.png"
-      alt="Incoralis Ltd"
-      class="logo"
-    />
-
-    <div class="info">
-      <div class="company-block">
-        <div class="company-name">Incoralis Ltd</div>
-        Company Number: 17217832
-      </div>
-
-      <div class="company-block">
-        <div class="company-name">Incoralis Group Limited</div>
-        Company Number: 17215096
-      </div>
-
-      <div class="ownership-note">
-        Incoralis Ltd is part of Incoralis Group Limited.
-      </div>
-
-      Registered Office
-      <br />
-      Piccadilly Business Centre
-      <br />
-      Blackett Street
-      <br />
-      Manchester
-      <br />
-      M12 6AE
+  <div class="page">
+    <div class="top-bar">
+      <a class="back-link" href="index.html">← Back to Main Page</a>
     </div>
 
-    <a
-      href="mailto:enquiries@incoralis.co.uk"
-      class="email-link"
-    >
-      <span class="email-icon">✉</span>
-      <span>enquiries@incoralis.co.uk</span>
-    </a>
+    <div class="panel">
+      <div class="company-section">
+        <img
+          src="group_logo.png"
+          alt="Incoralis Group Limited"
+          class="logo"
+        />
+
+        <div class="info">
+          Company Number: 17215096
+          <br /><br />
+          Registered Office
+          <br />
+          Piccadilly Business Centre
+          <br />
+          Blackett Street
+          <br />
+          Manchester
+          <br />
+          M12 6AE
+        </div>
+
+        <a
+          href="mailto:admin@incoralis.co.uk"
+          class="email-link"
+        >
+          <span class="email-icon">✉</span>
+          <span>admin@incoralis.co.uk</span>
+        </a>
+      </div>
+
+      <div class="company-section">
+        <img
+          src="incoralis_logo.png"
+          alt="Incoralis Limited"
+          class="logo"
+        />
+
+        <div class="info">
+          Company Number: 17217832
+          <br /><br />
+          Registered Office
+          <br />
+          Piccadilly Business Centre
+          <br />
+          Blackett Street
+          <br />
+          Manchester
+          <br />
+          M12 6AE
+        </div>
+
+        <a
+          href="mailto:enquiries@incoralis.co.uk"
+          class="email-link"
+        >
+          <span class="email-icon">✉</span>
+          <span>enquiries@incoralis.co.uk</span>
+        </a>
+      </div>
+    </div>
+
+    <footer>
+      Incoralis Limited is part of Incoralis Group Limited.
+    </footer>
   </div>
 </body>
 </html>
+```
+
+Notes:
+
+* Kept fully adaptive for laptops, tablets, phones, portrait, and landscape.
+* Preserved Orbitron font with character spacing throughout.
+* No comments added inside the file.
+* Footer wording simplified exactly as requested.
+* Layout remains GitHub Pages safe and responsive.
