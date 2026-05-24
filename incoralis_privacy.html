@@ -62,6 +62,14 @@
       border-bottom: 2px solid #ff9800;
       background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0));
       box-shadow: 0 8px 22px rgba(255,152,0,0.18);
+      transition: transform 180ms ease, filter 180ms ease;
+    }
+
+    .back-link:hover,
+    .back-link:focus-visible {
+      transform: translateY(-2px);
+      filter: brightness(1.12);
+      outline: none;
     }
 
     .logo {
@@ -78,6 +86,9 @@
         linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)),
         rgba(3, 5, 12, 0.90);
       border: 1px solid rgba(255,255,255,0.12);
+      box-shadow:
+        0 0 28px rgba(0,191,255,0.18),
+        0 0 36px rgba(168,92,255,0.14);
     }
 
     h1 {
@@ -117,11 +128,26 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: rgba(255,255,255,0.42);
+      line-height: 1.7;
     }
 
     @media (orientation: portrait) {
       body {
         background-image: url("background_portrait.png");
+      }
+    }
+
+    @media (max-width: 640px) {
+      .top-bar {
+        gap: 10px;
+      }
+
+      .logo {
+        width: clamp(100px, 34vw, 180px);
+      }
+
+      .panel {
+        padding: 22px 18px;
       }
     }
   </style>
@@ -144,12 +170,84 @@
 
       <p>
         This Privacy Policy explains how Incoralis Limited handles personal information in connection with this website.
+        Incoralis Limited operates as part of Incoralis Group Limited.
       </p>
 
-      <h2>Information We Collect</h2>
+      <h2>Information we collect</h2>
 
       <p>
         This website does not currently use contact forms, user accounts, payment processing, advertising cookies, analytics tracking, or automated visitor profiling.
+      </p>
+
+      <p>
+        We may receive personal information only if you choose to contact us directly by email. This may include:
+      </p>
+
+      <ul>
+        <li>your name, if you provide it</li>
+        <li>your email address</li>
+        <li>the contents of your message</li>
+        <li>any information you voluntarily include in your enquiry</li>
+      </ul>
+
+      <h2>How we use information</h2>
+
+      <p>
+        Information sent to us by email is used only to read, manage, and respond to your enquiry, provide support where applicable, and keep appropriate business records.
+      </p>
+
+      <h2>Data sharing</h2>
+
+      <p>
+        We do not sell personal information. We do not use personal information for advertising or automated marketing.
+      </p>
+
+      <p>
+        Information may be shared only where necessary to operate the business, comply with legal obligations, protect rights or security, or respond to lawful requests.
+      </p>
+
+      <h2>Third-party links</h2>
+
+      <p>
+        This website may contain links to third-party websites or platforms, including Apple App Store and Google Play in the future.
+      </p>
+
+      <p>
+        Third-party platforms operate under their own privacy policies and terms. Incoralis Limited and Incoralis Group Limited are not responsible for the privacy practices, content, or operation of third-party websites or services.
+      </p>
+
+      <h2>Data retention</h2>
+
+      <p>
+        Email enquiries may be retained for as long as reasonably necessary to respond to the enquiry, maintain business records, resolve issues, or comply with legal obligations.
+      </p>
+
+      <h2>Your rights</h2>
+
+      <p>
+        Depending on applicable law, you may have rights in relation to personal information you have provided, including the right to request access, correction, or deletion.
+      </p>
+
+      <p>
+        To make a privacy-related request, please use the contact details provided on the Contact page.
+      </p>
+
+      <h2>Children’s privacy</h2>
+
+      <p>
+        This website is not intended to collect personal information from children. If a parent or guardian believes that a child has provided personal information by email, they may contact us to request review or deletion.
+      </p>
+
+      <h2>Changes to this policy</h2>
+
+      <p>
+        This Privacy Policy may be updated from time to time. The latest version will be made available on this website.
+      </p>
+
+      <h2>Governing law</h2>
+
+      <p>
+        This Privacy Policy shall be governed by and interpreted in accordance with the laws of England and Wales.
       </p>
     </div>
 
