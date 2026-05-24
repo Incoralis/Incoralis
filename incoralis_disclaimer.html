@@ -62,6 +62,14 @@
       border-bottom: 2px solid #b16cff;
       background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0));
       box-shadow: 0 8px 22px rgba(177,108,255,0.18);
+      transition: transform 180ms ease, filter 180ms ease;
+    }
+
+    .back-link:hover,
+    .back-link:focus-visible {
+      transform: translateY(-2px);
+      filter: brightness(1.12);
+      outline: none;
     }
 
     .logo {
@@ -78,6 +86,9 @@
         linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)),
         rgba(3, 5, 12, 0.90);
       border: 1px solid rgba(255,255,255,0.12);
+      box-shadow:
+        0 0 28px rgba(0,191,255,0.18),
+        0 0 36px rgba(168,92,255,0.14);
     }
 
     h1 {
@@ -117,11 +128,26 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: rgba(255,255,255,0.42);
+      line-height: 1.7;
     }
 
     @media (orientation: portrait) {
       body {
         background-image: url("background_portrait.png");
+      }
+    }
+
+    @media (max-width: 640px) {
+      .top-bar {
+        gap: 10px;
+      }
+
+      .logo {
+        width: clamp(100px, 34vw, 180px);
+      }
+
+      .panel {
+        padding: 22px 18px;
       }
     }
   </style>
@@ -143,13 +169,82 @@
       <h1>Disclaimer</h1>
 
       <p>
-        This website and associated services are provided by Incoralis Limited.
+        This website and any associated services, applications, software, content, materials, and digital resources are provided by or through Incoralis Limited, which operates as part of Incoralis Group Limited.
       </p>
 
-      <h2>General Information</h2>
+      <h2>General information</h2>
 
       <p>
-        All information provided on this website is for general informational purposes only.
+        All information provided on this website is for general informational purposes only. While reasonable efforts may be made to keep information accurate and up to date, no guarantees, warranties, or representations are made regarding completeness, accuracy, reliability, suitability, or availability.
+      </p>
+
+      <h2>Website and service availability</h2>
+
+      <p>
+        Access to this website, associated applications, digital services, software, or content may be modified, suspended, restricted, interrupted, or removed at any time without notice.
+      </p>
+
+      <p>
+        No guarantee is provided that the website or associated services will remain uninterrupted, secure, error-free, compatible with all devices, or continuously available.
+      </p>
+
+      <h2>Applications and digital services</h2>
+
+      <p>
+        Current or future software products, mobile applications, digital tools, or related services provided by Incoralis Limited may contain limitations, errors, interruptions, bugs, inaccuracies, or compatibility issues.
+      </p>
+
+      <p>
+        Use of any applications, software, tools, or services is entirely at the user’s own discretion and risk.
+      </p>
+
+      <h2>External platforms and third-party services</h2>
+
+      <p>
+        This website may contain links to or references to third-party services and platforms including, but not limited to, Apple App Store, Google Play, external websites, hosting providers, or software services.
+      </p>
+
+      <p>
+        Third-party platforms and services operate independently and under their own policies, terms, and conditions. Incoralis Limited and Incoralis Group Limited are not responsible for third-party content, availability, policies, outages, functionality, actions, security, or operations.
+      </p>
+
+      <h2>No professional advice</h2>
+
+      <p>
+        Nothing contained on this website or within associated services, applications, or materials constitutes legal, financial, medical, travel, technical, or professional advice of any kind.
+      </p>
+
+      <p>
+        Users remain solely responsible for decisions, actions, planning, purchases, travel arrangements, compliance obligations, and use of information or services.
+      </p>
+
+      <h2>Limitation of liability</h2>
+
+      <p>
+        To the fullest extent permitted by applicable law, Incoralis Limited and Incoralis Group Limited disclaim liability for any direct, indirect, incidental, consequential, special, or other damages arising from or related to:
+      </p>
+
+      <ul>
+        <li>use of this website</li>
+        <li>inability to access services</li>
+        <li>website interruptions or downtime</li>
+        <li>software or application errors</li>
+        <li>data loss or corruption</li>
+        <li>reliance on website information</li>
+        <li>third-party platforms or services</li>
+        <li>device or compatibility issues</li>
+      </ul>
+
+      <h2>Changes to this disclaimer</h2>
+
+      <p>
+        This Disclaimer may be updated, amended, or revised at any time without prior notice. Continued use of this website or associated services constitutes acceptance of the latest version.
+      </p>
+
+      <h2>Governing law</h2>
+
+      <p>
+        This Disclaimer shall be governed by and interpreted in accordance with the laws of England and Wales.
       </p>
     </div>
 
