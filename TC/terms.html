@@ -1,1 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel ChecknGo Terms and Conditions</title>
 
+  <link rel="icon" type="image/png" href="../assets/favicon.png" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: #000;
+      color: #fff;
+      font-family: "Orbitron", Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    body {
+      min-height: 100vh;
+      background-image: url("../assets/background_landscape.png");
+      background-size: 100% 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: clamp(16px, 3vw, 32px);
+    }
+
+    .page {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: clamp(24px, 4vh, 42px);
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: clamp(30px, 4vw, 42px);
+      padding: clamp(6px, 1vw, 10px) clamp(10px, 1.5vw, 18px);
+      color: #ffffff;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: clamp(8px, 0.9vw, 13px);
+      letter-spacing: 0.12em;
+      border-bottom: 2px solid #00ebff;
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0));
+      box-shadow: 0 8px 22px rgba(0,235,255,0.18);
+      transition: transform 180ms ease, filter 180ms ease;
+    }
+
+    .back-link:hover,
+    .back-link:focus-visible {
+      transform: translateY(-2px);
+      filter: brightness(1.12);
+      outline: none;
+    }
+
+    .logo {
+      width: clamp(100px, 14vw, 220px);
+      height: auto;
+      object-fit: contain;
+    }
+
+    .panel {
+      width: 100%;
+      padding: clamp(22px, 4vw, 42px);
+      border-radius: 28px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)),
+        rgba(3, 5, 12, 0.90);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow:
+        0 0 28px rgba(0,191,255,0.18),
+        0 0 36px rgba(168,92,255,0.14);
+    }
+
+    h1 {
+      margin-top: 0;
+      margin-bottom: 18px;
+      font-size: clamp(18px, 2.6vw, 30px);
+      color: #00ebff;
+      letter-spacing: 0.06em;
+      line-height: 1.2;
+    }
+
+    h2 {
+      margin-top: 34px;
+      margin-bottom: 12px;
+      font-size: clamp(14px, 1.6vw, 19px);
+      color: #00ebff;
+      letter-spacing: 0.05em;
+      line-height: 1.4;
+    }
+
+    p,
+    li {
+      color: rgba(255,255,255,0.88);
+      font-size: clamp(13px, 1.45vw, 17px);
+      line-height: 1.9;
+      letter-spacing: 0.035em;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    footer {
+      margin-top: 28px;
+      text-align: center;
+      font-size: clamp(8px, 0.85vw, 12px);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.42);
+      line-height: 1.7;
+    }
+
+    @media (orientation: portrait) {
+      body {
+        background-image: url("../assets/background_portrait.png");
+      }
+    }
+
+    @media (max-width: 640px) {
+      .top-bar {
+        gap: 10px;
+      }
+
+      .logo {
+        width: clamp(90px, 28vw, 160px);
+      }
+
+      .panel {
+        padding: 22px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <div class="top-bar">
+      <a class="back-link" href="index.html">← Back</a>
+
+      <img
+        src="../assets/incoralis_logo3.png"
+        alt="Incoralis Limited"
+        class="logo"
+      />
+    </div>
+
+    <div class="panel">
+      <h1>Terms and Conditions</h1>
+
+      <p>
+        Travel ChecknGo and related branding are owned by Incoralis Group Limited and developed, operated, and published by Incoralis Limited.
+      </p>
+
+      <p>
+        By using Travel ChecknGo, you agree that the app is provided on an "as is" and "as available" basis, without warranties of any kind, whether express or implied, including but not limited to accuracy, reliability, availability, or fitness for a particular purpose.
+      </p>
+
+      <p>
+        Travel ChecknGo is intended for general travel planning, packing, and organisational purposes only. It does not provide medical, legal, insurance, safety, or professional advice, and should not be relied upon as the sole source of information.
+      </p>
+
+      <p>
+        You are responsible for verifying all travel-related information, including documentation, bookings, requirements, restrictions, airline policies and compliance with local laws and regulations.
+      </p>
+
+      <p>
+        Travel requirements, rules, and restrictions may change at any time, and Travel ChecknGo makes no guarantees that information or guidance within the app reflects current or complete requirements.
+      </p>
+
+      <p>
+        All information entered into the app is provided and managed by you. Travel ChecknGo is not responsible for any errors, omissions, or loss of data resulting from user input or use of the app, and does not guarantee that data will always be retained or recoverable. Users are responsible for keeping their own backups or copies of any important information if required.
+      </p>
+
+      <p>
+        Access to the app may be interrupted, delayed, or unavailable at any time. Travel ChecknGo does not guarantee uninterrupted or error-free operation.
+      </p>
+
+      <p>
+        To the fullest extent permitted by law, Incoralis Limited shall not be liable for any direct, indirect, incidental, consequential, special, or exemplary loss or damage arising from the use of, or inability to use, the app.
+      </p>
+
+      <p>
+        This includes, but is not limited to, loss of data, device issues, travel disruption, missed departures, financial loss, or any actions taken based on information within the app.
+      </p>
+
+      <p>
+        Nothing in these terms excludes or limits any rights you may have under applicable consumer protection laws.
+      </p>
+
+      <p>
+        All content, design, branding, and intellectual property within Travel ChecknGo remain owned by Incoralis Group Limited and may not be copied, reproduced, or distributed without permission.
+      </p>
+
+      <p>
+        These terms are governed by the laws of the United Kingdom.
+      </p>
+    </div>
+
+    <footer>
+      © 2026 Incoralis Limited. Part of Incoralis Group Limited. All rights reserved.
+    </footer>
+  </div>
+</body>
+</html>
