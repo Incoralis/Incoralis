@@ -74,8 +74,15 @@
     main {
       display: flex;
       justify-content: center;
-      align-items: center;
       padding: clamp(20px, 4vh, 40px) 0;
+    }
+
+    .photos-panel {
+      width: min(1100px, 94vw);
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: clamp(18px, 3vw, 38px);
+      backdrop-filter: blur(3px);
     }
 
     .page-title {
@@ -83,6 +90,27 @@
       letter-spacing: 0.14em;
       text-transform: uppercase;
       text-align: center;
+      color: #00ebff;
+      margin-bottom: clamp(22px, 4vh, 40px);
+    }
+
+    .screenshot-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: clamp(14px, 2vw, 28px);
+      align-items: start;
+    }
+
+    .screenshot-card {
+      width: 100%;
+    }
+
+    .screenshot-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 1px solid rgba(255,255,255,0.18);
+      box-shadow: 0 10px 28px rgba(0,235,255,0.12);
     }
 
     footer {
@@ -97,6 +125,12 @@
     @media (orientation: portrait) {
       body {
         background-image: url("../assets/background_portrait.png");
+      }
+    }
+
+    @media (max-width: 1000px) {
+      .screenshot-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
@@ -117,6 +151,16 @@
 
       .logo {
         width: clamp(125px, 40vw, 200px);
+      }
+
+      .photos-panel {
+        width: 100%;
+        padding: 16px;
+      }
+
+      .screenshot-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
       }
 
       footer {
@@ -140,7 +184,43 @@
     </header>
 
     <main>
-      <div class="page-title">Photos</div>
+      <div class="photos-panel">
+        <div class="page-title">Photos</div>
+
+        <div class="screenshot-grid">
+          <div class="screenshot-card">
+            <img src="../assets/Screenshotfinal 1.png" alt="Travel ChecknGo screenshot 1" />
+          </div>
+
+          <div class="screenshot-card">
+            <img src="../assets/Screenshotfinal 2.png" alt="Travel ChecknGo screenshot 2" />
+          </div>
+
+          <div class="screenshot-card">
+            <img src="../assets/Screenshotfinal 3.png" alt="Travel ChecknGo screenshot 3" />
+          </div>
+
+          <div class="screenshot-card">
+            <img src="../assets/Screenshotfinal 4.png" alt="Travel ChecknGo screenshot 4" />
+          </div>
+
+          <div class="screenshot-card">
+            <img src="../assets/Screenshotfinal 5.png" alt="Travel ChecknGo screenshot 5" />
+          </div>
+
+          <div class="screenshot-card">
+            <img src="../assets/Screenshotfinal 6.png" alt="Travel ChecknGo screenshot 6" />
+          </div>
+
+          <div class="screenshot-card">
+            <img src="../assets/Screenshotfinal 7.png" alt="Travel ChecknGo screenshot 7" />
+          </div>
+
+          <div class="screenshot-card">
+            <img src="../assets/Screenshotfinal 8.png" alt="Travel ChecknGo screenshot 8" />
+          </div>
+        </div>
+      </div>
     </main>
 
     <footer>
