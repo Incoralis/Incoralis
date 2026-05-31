@@ -87,6 +87,34 @@
       display: block;
     }
 
+    .banner-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: clamp(12px, 2vh, 22px);
+      width: min(620px, 72vw);
+    }
+
+    .banner-link {
+      display: block;
+      width: 100%;
+      text-decoration: none;
+      transition: transform 180ms ease, filter 180ms ease;
+    }
+
+    .banner-link:hover,
+    .banner-link:focus-visible {
+      transform: translateY(-3px);
+      filter: brightness(1.12);
+      outline: none;
+    }
+
+    .banner-link img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
     .legal-tabs {
       display: grid;
       grid-template-columns: repeat(4, auto);
@@ -136,6 +164,10 @@
       .logo {
         width: clamp(140px, 28vw, 260px);
       }
+
+      .banner-links {
+        width: min(620px, 86vw);
+      }
     }
 
     @media (max-width: 500px) {
@@ -159,6 +191,11 @@
 
       .app-news {
         width: 100%;
+      }
+
+      .banner-links {
+        width: 100%;
+        gap: clamp(10px, 2vh, 18px);
       }
 
       .legal-tab {
@@ -187,6 +224,16 @@
         alt="New app coming soon"
         class="app-news"
       />
+
+      <div class="banner-links">
+        <a href="description.html" class="banner-link" aria-label="Open Travel ChecknGo description page">
+          <img src="../assets/description banner.png" alt="Travel ChecknGo description" />
+        </a>
+
+        <a href="photos.html" class="banner-link" aria-label="Open Travel ChecknGo photos page">
+          <img src="../assets/photos banner.png" alt="Travel ChecknGo photos" />
+        </a>
+      </div>
 
       <nav class="legal-tabs" aria-label="Travel ChecknGo legal navigation">
         <a href="disclaimer.html" class="legal-tab">
