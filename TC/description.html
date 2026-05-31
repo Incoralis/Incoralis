@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" href="../assets/favicon.png" />
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap"
     rel="stylesheet"
   />
 
@@ -21,10 +21,10 @@
     body {
       margin: 0;
       min-height: 100%;
-      font-family: "Orbitron", Arial, sans-serif;
-      color: #ffffff;
       background: #000;
+      color: #ffffff;
       overflow-x: hidden;
+      font-family: "Comfortaa", Arial, sans-serif;
     }
 
     body {
@@ -62,6 +62,7 @@
       border-bottom: 2px solid #00ebff;
       background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0));
       box-shadow: 0 8px 22px rgba(0,235,255,0.18);
+      font-family: "Orbitron", Arial, sans-serif;
     }
 
     .logo {
@@ -77,21 +78,85 @@
       padding: clamp(20px, 4vh, 40px) 0;
     }
 
-    .description-container {
-      width: min(980px, 92vw);
-      background: rgba(0, 0, 0, 0.45);
-      padding: clamp(18px, 3vw, 42px);
-      border: 1px solid rgba(255,255,255,0.12);
-      backdrop-filter: blur(2px);
+    .description-panel {
+      width: min(980px, 94vw);
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: clamp(22px, 3vw, 42px);
+      backdrop-filter: blur(3px);
     }
 
-    .description-text {
+    .section {
+      margin-bottom: clamp(28px, 4vh, 42px);
+    }
+
+    .section:last-child {
+      margin-bottom: 0;
+    }
+
+    .intro-text,
+    .body-text {
       color: #ffffff;
-      font-size: clamp(12px, 1.1vw, 17px);
+      font-size: clamp(13px, 1.1vw, 18px);
       line-height: 1.9;
+      letter-spacing: 0.03em;
+    }
+
+    .intro-text {
+      font-size: clamp(15px, 1.25vw, 21px);
+    }
+
+    .highlight {
+      color: #00ebff;
+      font-weight: 700;
+    }
+
+    .features-title {
+      color: #00ebff;
+      font-size: clamp(18px, 1.6vw, 28px);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      margin-bottom: 24px;
+    }
+
+    .feature-list {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      color: #ffffff;
+      font-size: clamp(13px, 1.1vw, 18px);
+      line-height: 1.8;
+      letter-spacing: 0.03em;
+    }
+
+    .feature-bullet {
+      color: #00ebff;
+      font-size: 18px;
+      line-height: 1.5;
+      flex-shrink: 0;
+    }
+
+    .closing-text {
+      text-align: center;
+      color: #ffffff;
+      font-size: clamp(14px, 1.15vw, 20px);
+      line-height: 2;
+      letter-spacing: 0.04em;
+    }
+
+    .tagline {
+      color: #00ebff;
+      font-size: clamp(20px, 2vw, 34px);
+      font-weight: 700;
+      text-align: center;
+      margin-top: 18px;
       letter-spacing: 0.08em;
-      text-align: left;
-      white-space: pre-line;
     }
 
     footer {
@@ -101,6 +166,7 @@
       text-transform: uppercase;
       color: rgba(255, 255, 255, 0.42);
       padding-bottom: 6px;
+      font-family: "Orbitron", Arial, sans-serif;
     }
 
     @media (orientation: portrait) {
@@ -128,14 +194,13 @@
         width: clamp(125px, 40vw, 200px);
       }
 
-      .description-container {
+      .description-panel {
         width: 100%;
         padding: 18px;
       }
 
-      .description-text {
-        font-size: clamp(11px, 3.2vw, 14px);
-        line-height: 1.8;
+      .feature-item {
+        gap: 10px;
       }
 
       footer {
@@ -159,45 +224,114 @@
     </header>
 
     <main>
-      <div class="description-container">
-        <div class="description-text">
-Travel ChecknGo is your ultimate, all in one travel organiser companion. Created with you in mind, it brings your planning, packing and preparation together, designed to keep every part organised, clear and easy to manage in a stress-free way.
+      <div class="description-panel">
 
-
-Whether you are planning a family holiday, an excursion or retreat, weekend getaway, a short break or long vacation, city break, road trip, business trip, cruise, winter escape or summer adventure, Travel ChecknGo keeps everything together in one place, always at your fingertips.
-
-Create your own personalised packing checklist, organise important tasks, plan your itinerary for your visits and activities, keep notes handy and manage shopping lists for both before and during your trip, all easily accessible whenever you need them, reducing the mental load of organising your journey.
-
-You can add your own custom items at any time, giving you complete flexibility and versatility, so that nothing gets missed.
-
-
-Features include:
-
-
-• At the heart of the app is a powerful, curated Checklist, featuring a library with over 900 items divided into 20 categories of items to choose from, which can be personalised by pinning and ticking to create your own tailored My List, suited to your travel needs
-
-• Alongside this there is a Pre travel To Do list, tasks to remember to complete before you go
-
-• A Shopping list for before you travel
-
-• A Shopping list for when you arrive at your destination
-
-• A dedicated Notes section for references or other important information to remember
-
-• Space to fill in all your Itinerary details
-
-• Useful travel tips and a How to Use section is available to guide you along the way
-
-
-A powerful Search feature inside the app helps you instantly find any content within the entire app to save time. You have the option to Print your own My Items list as well.
-
-Travel ChecknGo is designed to adapt to your travel, letting you build, update, adjust, refine and reuse your lists whenever needed, again and again for each trip. Everything is saved directly on your device, so you can return at any time to continue right where you left off.
-
-Plan it. Pack it. Go
-
-No ads.
-No subscription fees.
+        <div class="section">
+          <div class="intro-text">
+            <span class="highlight">Travel ChecknGo</span> is your ultimate, all in one travel organiser companion. Created with you in mind, it brings your planning, packing and preparation together, designed to keep every part organised, clear and easy to manage in a stress-free way.
+          </div>
         </div>
+
+        <div class="section">
+          <div class="body-text">
+            Whether you are planning a family holiday, an excursion or retreat, weekend getaway, a short break or long vacation, city break, road trip, business trip, cruise, winter escape or summer adventure, <span class="highlight">Travel ChecknGo</span> keeps everything together in one place, always at your fingertips.
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="body-text">
+            Create your own personalised packing checklist, organise important tasks, plan your itinerary for your visits and activities, keep notes handy and manage shopping lists for both before and during your trip, all easily accessible whenever you need them, reducing the mental load of organising your journey.
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="body-text">
+            You can add your own custom items at any time, giving you complete flexibility and versatility, so that nothing gets missed.
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="features-title">
+            Features Include
+          </div>
+
+          <div class="feature-list">
+
+            <div class="feature-item">
+              <div class="feature-bullet">•</div>
+              <div>
+                At the heart of the app is a powerful, curated <span class="highlight">Checklist</span>, featuring a library with over 900 items divided into 20 categories of items to choose from, which can be personalised by pinning and ticking to create your own tailored <span class="highlight">My List</span>, suited to your travel needs
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-bullet">•</div>
+              <div>
+                Alongside this there is a Pre travel <span class="highlight">To Do</span> list, tasks to remember to complete before you go
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-bullet">•</div>
+              <div>
+                A <span class="highlight">Shopping</span> list for before you travel
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-bullet">•</div>
+              <div>
+                A <span class="highlight">Shopping</span> list for when you arrive at your destination
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-bullet">•</div>
+              <div>
+                A dedicated <span class="highlight">Notes</span> section for references or other important information to remember
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-bullet">•</div>
+              <div>
+                Space to fill in all your <span class="highlight">Itinerary</span> details
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-bullet">•</div>
+              <div>
+                Useful travel tips and a <span class="highlight">How to Use</span> section is available to guide you along the way
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="body-text">
+            A powerful <span class="highlight">Search</span> feature inside the app helps you instantly find any content within the entire app to save time. You have the option to Print your own My Items list as well.
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="body-text">
+            <span class="highlight">Travel ChecknGo</span> is designed to adapt to your travel, letting you build, update, adjust, refine and reuse your lists whenever needed, again and again for each trip. Everything is saved directly on your device, so you can return at any time to continue right where you left off.
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="closing-text">
+            No ads.<br />
+            No subscription fees.
+          </div>
+
+          <div class="tagline">
+            Plan it. Pack it. Go
+          </div>
+        </div>
+
       </div>
     </main>
 
