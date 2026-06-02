@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Travel ChecknGo Disclaimer</title>
 
-  <link rel="icon" type="image/png" href="../../assets/favicon.png" />
+  <link rel="icon" type="image/png" href="../assets/favicon.png" />
 
   <link
     href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap"
@@ -29,7 +29,7 @@
 
     body {
       min-height: 100vh;
-      background-image: url("../../assets/background_landscape.png");
+      background-image: url("../assets/background_landscape.png");
       background-size: 100% 100%;
       background-position: center;
       background-repeat: no-repeat;
@@ -100,11 +100,25 @@
       line-height: 1.2;
     }
 
-    p {
+    h2 {
+      margin-top: 34px;
+      margin-bottom: 12px;
+      font-size: clamp(14px, 1.6vw, 19px);
+      color: #b16cff;
+      letter-spacing: 0.05em;
+      line-height: 1.4;
+    }
+
+    p,
+    li {
       color: rgba(255,255,255,0.88);
       font-size: clamp(13px, 1.45vw, 17px);
       line-height: 1.9;
       letter-spacing: 0.035em;
+    }
+
+    ul {
+      padding-left: 20px;
     }
 
     footer {
@@ -119,7 +133,21 @@
 
     @media (orientation: portrait) {
       body {
-        background-image: url("../../assets/background_portrait.png");
+        background-image: url("../assets/background_portrait.png");
+      }
+    }
+
+    @media (max-width: 640px) {
+      .top-bar {
+        gap: 10px;
+      }
+
+      .logo {
+        width: clamp(90px, 28vw, 160px);
+      }
+
+      .panel {
+        padding: 22px 18px;
       }
     }
   </style>
@@ -128,10 +156,10 @@
 <body>
   <div class="page">
     <div class="top-bar">
-      <a class="back-link" href="/TC/">← Back</a>
+      <a class="back-link" href="index.html">← Back</a>
 
       <img
-        src="../../assets/incoralis_logo3.png"
+        src="../assets/incoralis_logo3.png"
         alt="Incoralis Limited"
         class="logo"
       />
