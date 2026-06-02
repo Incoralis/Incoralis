@@ -1,25 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+>
 
   <url>
     <loc>https://incoralis.co.uk/</loc>
-  </url>
-
-  <url>
-    <loc>https://incoralis.co.uk/contact/</loc>
-  </url>
-
-  <url>
-    <loc>https://incoralis.co.uk/privacy/</loc>
-  </url>
-
-  <url>
-    <loc>https://incoralis.co.uk/terms/</loc>
-  </url>
-
-  <url>
-    <loc>https://incoralis.co.uk/disclaimer/</loc>
   </url>
 
   <url>
@@ -27,7 +13,15 @@
   </url>
 
   <url>
-    <loc>https://incoralis.co.uk/TC/contact/</loc>
+    <loc>https://incoralis.co.uk/TC/description/</loc>
+  </url>
+
+  <url>
+    <loc>https://incoralis.co.uk/TC/photos/</loc>
+  </url>
+
+  <url>
+    <loc>https://incoralis.co.uk/TC/disclaimer/</loc>
   </url>
 
   <url>
@@ -39,15 +33,23 @@
   </url>
 
   <url>
-    <loc>https://incoralis.co.uk/TC/disclaimer/</loc>
+    <loc>https://incoralis.co.uk/TC/contact/</loc>
   </url>
 
   <url>
-    <loc>https://incoralis.co.uk/TC/description/</loc>
+    <loc>https://incoralis.co.uk/Main/disclaimer/</loc>
   </url>
 
   <url>
-    <loc>https://incoralis.co.uk/TC/photos/</loc>
+    <loc>https://incoralis.co.uk/Main/privacy/</loc>
+  </url>
+
+  <url>
+    <loc>https://incoralis.co.uk/Main/terms/</loc>
+  </url>
+
+  <url>
+    <loc>https://incoralis.co.uk/Main/contact/</loc>
   </url>
 
 </urlset>
