@@ -89,6 +89,26 @@
       display: block;
     }
 
+    .playstore-link {
+      display: block;
+      width: min(260px, 42vw);
+      text-decoration: none;
+      transition: transform 180ms ease, filter 180ms ease;
+    }
+
+    .playstore-link:hover,
+    .playstore-link:focus-visible {
+      transform: translateY(-3px);
+      filter: brightness(1.12);
+      outline: none;
+    }
+
+    .playstore-link img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
     .banner-links {
       display: flex;
       flex-direction: column;
@@ -195,6 +215,10 @@
         width: 100%;
       }
 
+      .playstore-link {
+        width: min(230px, 70vw);
+      }
+
       .banner-links {
         width: min(300px, 84vw);
         gap: clamp(10px, 2vh, 18px);
@@ -222,17 +246,27 @@
 
     <main>
       <img
-        src="../assets/appnews.png?v=2"
-        alt="New app coming soon"
+        src="../assets/app_release_2nd_ps.png"
+        alt="Travel ChecknGo available now"
         class="app-news"
       />
 
+      <a
+        class="playstore-link"
+        href="https://play.google.com/store/apps/details?id=com.incoralis.travelcheckngo"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Get Travel ChecknGo on Google Play"
+      >
+        <img src="../assets/playstore_button.png" alt="Get it on Google Play" />
+      </a>
+
       <div class="banner-links">
-        <a class="banner-link" aria-label="Travel ChecknGo description page">
+        <a class="banner-link" href="/TC/description/" aria-label="Travel ChecknGo description page">
           <img src="../assets/description banner.png" alt="Travel ChecknGo description" />
         </a>
 
-        <a class="banner-link" aria-label="Travel ChecknGo photos page">
+        <a class="banner-link" href="/TC/photos/" aria-label="Travel ChecknGo photos page">
           <img src="../assets/photos banner.png" alt="Travel ChecknGo photos" />
         </a>
       </div>
